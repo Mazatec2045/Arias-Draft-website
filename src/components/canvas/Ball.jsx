@@ -41,7 +41,10 @@ const BallCanvas = () => {
         <Canvas
             frameloop='demand'
             dpr={[1, 2]}
-            gl={{ preserveDrawingBuffer: true }}
+            gl={{ preserveDrawingBuffer: true, alpha: true }}
+            onCreated={({ gl }) => {
+                gl.setClearColor(0x000000, 0);
+            }}
         >
             <Suspense fallback={<CanvasLoader />}>
                 <OrbitControls enableZoom={false} />

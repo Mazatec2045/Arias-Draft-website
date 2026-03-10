@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Minecraft Personal World Home</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ee2b8c",
+                        "background-light": "#87ceeb", // Minecraft sky blue
+                        "background-dark": "#1a1a1a",
+                        "mc-gray": "#c6c6c6",
+                        "mc-dark-gray": "#555555",
+                        "mc-light-gray": "#ffffff",
+                        "mc-dirt": "#866043",
+                        "mc-grass": "#7db23e",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0rem", // Minecraft is blocky
+                        "lg": "0.125rem",
+                        "xl": "0.25rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Minecraft UI Style Inset/Outset Borders */
+        .mc-panel {
+            background-color: #c6c6c6;
+            border: 4px solid;
+            border-color: #ffffff #555555 #555555 #ffffff;
+            box-shadow: inset -4px -4px 0px #8b8b8b, inset 4px 4px 0px #dbdbdb;
+        }
+        .mc-button {
+            background-color: #a0a0a0;
+            border: 3px solid;
+            border-color: #ffffff #555555 #555555 #ffffff;
+            transition: all 0.1s;
+            image-rendering: pixelated;
+        }
+        .mc-button:hover {
+            background-color: #7db23e;
+            border-color: #ffffff #3e5e1f #3e5e1f #ffffff;
+            color: #ffffff;
+        }
+        .mc-button:active {
+            border-color: #555555 #ffffff #ffffff #555555;
+            padding-top: 2px;
+        }
+        .mc-slot {
+            background-color: #8b8b8b;
+            border: 3px solid;
+            border-color: #373737 #ffffff #ffffff #373737;
+            width: 64px;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .mc-slot:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            outline: 3px solid white;
+            z-index: 10;
+        }
+        .mc-sign {
+            background-color: #c09a67; /* Oak wood color */
+            border: 4px solid #866043;
+            position: relative;
+        }
+        .mc-sign::before {
+            content: '';
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 12px;
+            height: 40px;
+            background-color: #866043;
+        }
+        .pixel-text {
+            text-shadow: 2px 2px 0px #3f3f3f;
+        }
+        .mc-grid-bg {
+            background-image: 
+                linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 32px 32px;
+        }
+        .mc-clouds {
+            background: white;
+            box-shadow: 20px 0 0 0 white, 0 20px 0 0 white, 20px 20px 0 0 white, 40px 20px 0 0 white;
+            width: 40px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display selection:bg-primary selection:text-white">
+<!-- Global Wrapper with Pixel Sky Background -->
+<div class="relative min-h-screen w-full flex flex-col overflow-x-hidden mc-grid-bg">
+<!-- Animated Background Elements (Static for this task) -->
+<div class="absolute top-20 left-20 mc-clouds opacity-40"></div>
+<div class="absolute top-40 right-40 mc-clouds opacity-30 scale-150"></div>
+<!-- Header / Navigation Bar -->
+<header class="z-50 px-10 py-6">
+<nav class="flex items-center justify-between max-w-7xl mx-auto mc-panel px-6 py-4">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 bg-primary border-4 border-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-2xl">grid_view</span>
+</div>
+<h1 class="text-[#3f3f3f] text-2xl font-black leading-none tracking-tighter uppercase italic">
+                        Lily's <span class="text-primary">World</span>
+</h1>
+</div>
+<div class="flex items-center gap-2">
+<a class="mc-button px-6 py-2 text-sm font-bold uppercase tracking-wider text-[#3f3f3f]" href="#">Home</a>
+<a class="mc-button px-6 py-2 text-sm font-bold uppercase tracking-wider text-[#3f3f3f]" href="#">Inventory</a>
+<a class="mc-button px-6 py-2 text-sm font-bold uppercase tracking-wider text-[#3f3f3f]" href="#">Wishes</a>
+<div class="w-2"></div>
+<button class="mc-button px-6 py-2 bg-primary/20 text-primary border-primary font-bold uppercase tracking-wider">
+                        Login
+                    </button>
+</div>
+</nav>
+</header>
+<main class="flex-1 flex flex-col items-center justify-start py-10 px-4 gap-20">
+<!-- Hero Section -->
+<section class="max-w-6xl w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<!-- Character Space -->
+<div class="flex justify-center items-center">
+<div class="relative w-80 h-[450px] mc-panel bg-mc-dirt/20 flex items-center justify-center">
+<img class="h-full w-auto object-contain image-rendering-pixelated" data-alt="Minecraft style 3D character model of a girl with pink hair" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_SvPjsJBP-jljuM7mY-Iiw5NwUVv3t4nPY6DxZITdU2yoktzxXsxuwIB4XPsLdXa2pshXWbx4Vom_Pp9wAgxaMt7hbs09vMQtG0VaXIg42AIz0VH9W30290FOP5CmzqW_coue1-Rjv4BICm8xQXeZfQOFY3lyEUkKe9QJFx4UdtBr8wjohn3yWiCRW0te-LP6AeSFRay_vsThkqxUBdyMm3h2xD3hPir9rOFkQ88jPsQ7P7ehHGCpVnK9zgzRSNKA25flJeEksBmB"/>
+<div class="absolute -bottom-4 -right-4 w-24 h-24 bg-mc-grass border-4 border-white shadow-lg flex items-center justify-center rotate-12">
+<span class="material-symbols-outlined text-white text-4xl">star</span>
+</div>
+</div>
+</div>
+<!-- Greeting -->
+<div class="flex flex-col gap-8">
+<div class="mc-panel p-10 bg-white/80 backdrop-blur-sm">
+<h2 class="text-6xl font-black text-mc-dark-gray leading-none mb-6 italic uppercase pixel-text">
+                            Welcome to <br/>
+<span class="text-primary text-7xl">Lily's</span> <br/>
+                            World!
+                        </h2>
+<p class="text-xl text-mc-dark-gray leading-relaxed mb-8 max-w-md">
+                            Explore my voxel universe filled with rare cats, pink blocks, and lots of virtual cake! 
+                        </p>
+<button class="mc-button px-10 py-5 text-2xl font-black uppercase tracking-widest flex items-center gap-4 w-full justify-center group">
+<span>Join the Server</span>
+<span class="material-symbols-outlined group-hover:translate-x-2 transition-transform">bolt</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Inventory Section (My Favorite Things) -->
+<section class="max-w-5xl w-full">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-mc-dark-gray text-4xl">inventory_2</span>
+<h3 class="text-3xl font-black uppercase text-mc-dark-gray italic">My Rare Inventory</h3>
+</div>
+<div class="mc-panel p-8 bg-[#c6c6c6]">
+<div class="mb-4 text-sm font-bold text-mc-dark-gray uppercase tracking-widest">Inventory Slots (9x3)</div>
+<div class="grid grid-cols-9 gap-2">
+<!-- Slot Row 1 -->
+<div class="mc-slot group">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of a ginger tabby cat" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBFhhO-5uSZNdsxcjEDLWluf9H7zYZ9SowDYQ1JJT6O8VJUySHc-O6jH3AEPIiFceNKePocJXRtnRRvooGh9bhVXEurFqglILxNk2NioZU0tvdttRf6R4C-V4F5RtTKvrTa5mcTuujJwHlrn8I8JarVevhf016yeE7Ee_vyxwKHzhUOq2QY_93KL5CwnepyYxoz1VXWjihoXXHacXtnnQ4ukcUcs-mzO7eoo6RiZg9B1HMs8xbDP7rbkbMqcqIndN2kTS5FOtwm9fqK"/>
+</div>
+<div class="mc-slot group">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of a bright pink wool block" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5TUQgBzK58DAr5HrdJlpw5W8HtBzrlDq7h7AHg7wBbSlLAff8S9EKZ4UeZuELFfA3_mG_RRlIv-a-vnKYwSPmfUi9oukcmqdzGaVJMWJc8LT-7Mbc5uuFYai1l_J7--n2qVsgZEBTi7I0feAZi9Q5PsVi4aGzQTlirg3a5yCbsQnGlBIowvXGBP_6oJVZ77kj9RBzafVi9VWIeeWV-liaeCsAA1zasMuxeX9X8Q79vNIy_oEVJxjvoWTRpDDfU1CpitXRnH7woxlT"/>
+</div>
+<div class="mc-slot group">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of a multi-layered birthday cake" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9nVcXqSq86SgmYXnHV3ZLv0CVtAaxPJKdDfSeQr4Fwey8jhwA_SAlXY00O2D2iF6mUEB4A77Dv6YHLNDttmHm3uWnbefeLIYGQudKo1fa2ghldcTz-vWXW239B6Sf2At2oQHOwwxfeJT5d7XGxLgZqZZPpSI1xDCY0LWCvAHMSmd2-Hyzy3uwKfoVFWFtCdtC3k-1Ze2WxF32zLLLefQ_x1n6ivn0EYbEYdfhGWDubFtamUewSxX4xr8-x9IaLa-Mydj7F3PXL8yd"/>
+</div>
+<div class="mc-slot group border-primary/50">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of a blooming pink tulip" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHKD1__KNnpbYcGaxmcvweiP2fKavu8-zunAhO68U99tSMWUq66hm_UiqSl3DWKwQZbrXzafYtmmAqGPagLpxGtDFLD_AnbKOthUKs1koPo1JLEIueP1EXbXvcf2Jm6LqBDeS8ffxzn-ew0dumCoKFS1MeIgKHrYnk4-mNwgBWr4a8fuc1Hh24njmFm1BNvl6az78m1YbIatiwmmK_yRwDcva-540m1f6nvuR9pS5gTHcO9hXxOozKG9WzhLUIdGkndGaWG2CqtRDR"/>
+</div>
+<div class="mc-slot group">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of a blue axolotl" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwN_9kvxP75nSpIPlhHXVB6bSGbgowjdMzNeOVWELWciKEte8-bKj1eHwxdK-O00sMC4xwpevlgMjfpyyowCa0R5IiVm3XV09iGgkLYXV1XlqB_7gBfUK-6oV1Yza-4c69JpeTpoZYqyZAwDw4S99ypNRT4ldqonHMa_hHblPg9bXA8nvwRLAj3qzfHeP2JlrR3A3zCS_lwKtu_Gw0p_c1yZ_qVuZraDWN2PKgDsn1JXuc7S6WwR-HHNTWrddJvvzVgrLmExeS0Ojg"/>
+</div>
+<div class="mc-slot group">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of a shiny diamond sword" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJKRiRCegAU-yKwMYF6W8l2-Crc8EJ4SUWgJqU1Ar9Zq5A9tPc3ph_7LjtPyCKeaVEZEg_yG9hADASSP1uXpZn-LOaNVZJFEvZJcla_dpoOlPogXoVeBMoE7cPFxI6nF6t1sXhHZre0reNzd1ietLYFhXyWNwX1PpL5txG31RmmZrxZSxxCW5BIk5Z-u7hmrsuWjDyA-EuR1vuhSOjKwJR7TJgl7mIfvH0dEtVF_F-oxFRASrtJ8oOnMcmuT9s9X2nVaev5OXRssPZ"/>
+</div>
+<div class="mc-slot group">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of an enchanted golden apple" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyX-WJ6tZHfIn26QfCe6e-mDIgO8_HL_1r5nw9qrVWCFwHTsi55maFUWu-gPTTe5hWkludXtTMHBGHnPv46rQLygd1_C5A7ttsoGxQRypNZIAd_tF9wsEdKG66VSec4gbRf--SXfuRh2nhuYyUxXkqXJ7QoZ40q9wZ_G_QbQarzw4_D0TsLL1MONMwxkxc_rE0UR8HxyI7BHxR3daGyd3iILO-kjm9Bm9x7hzvPNbe_KAeXx3rqS_qRJ_Z2YVdXCMVJwOjSvsNshjn"/>
+</div>
+<div class="mc-slot group">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of a fluffy panda" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC3JwXiuy05k03nMJCW4M6mc9JHA0Mf3f0SaC-Kx1ClT5s2Y8ugaE_2wXuhI5LZhMWYRjx-a_HdQN8We5UWzbuG36-vupjDozUebHemse0fKx0smVBXay0SIPdIgeyVwModnPMmI5dNARq_u8XrET4-e7My3hr-kuuoRitHKHlputz4QcmXT8Nq99WDvHd24Myg-kStjbCm9sDnwlySUqH0CRZfZWTvW3RUyiXOdW2aeqqCvMpFGkDu3fLBDMxaYhBrCZNmQupbdhV5"/>
+</div>
+<div class="mc-slot group">
+<img class="w-10 h-10 group-hover:scale-110 transition-transform" data-alt="Pixel art of a music disc" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAwwn9xVtE4U8dd92iuNJxKVL8_WAvdDAtCbrUUQnR3mlL__oaLF2ow0w5fMbAayhnMalNYJDZKmx3zbjuh77gS1pRK1fyoRh4SbihGNSLPdAPlMvCyMSY80_yVXZG3RtK7WehMmKN3N_ema74eO_WQPeO_sPAxy5WVMYNDmUcS7RujqIPkM4dMkNy_X6dU0I6WG9xZcDLlT_gBAf5DfEzNSo3AVMoUhgWpUbrWraf7ThlPPz5J2_7PaZlQE-4z2xsY8i3ZYyocLiBY"/>
+</div>
+<!-- Empty Rows -->
+<div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div>
+<div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div><div class="mc-slot"></div>
+</div>
+<div class="mt-12 flex justify-between items-end">
+<div class="bg-[#373737] p-4 text-[#7db23e] border-l-4 border-[#7db23e] font-mono text-lg">
+                            XP Level: <span class="animate-pulse">999</span>
+</div>
+<div class="flex gap-1">
+<div class="w-6 h-6 bg-primary border-2 border-white"></div>
+<div class="w-6 h-6 bg-primary border-2 border-white"></div>
+<div class="w-6 h-6 bg-primary border-2 border-white"></div>
+<div class="w-6 h-6 bg-primary border-2 border-white"></div>
+<div class="w-6 h-6 bg-primary/20 border-2 border-white"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Wishes Section (Sign Panels) -->
+<section class="max-w-6xl w-full flex flex-col items-center">
+<div class="flex items-center gap-4 mb-16">
+<span class="material-symbols-outlined text-mc-dark-gray text-4xl">edit_note</span>
+<h3 class="text-3xl font-black uppercase text-mc-dark-gray italic">Lily's Big Wishes</h3>
+</div>
+<div class="flex flex-wrap justify-center gap-20 pb-16">
+<!-- Sign 1 -->
+<div class="mc-sign w-64 p-6 text-center shadow-xl">
+<p class="text-[#373737] text-xl font-bold leading-tight">
+                            Build a giant castle made of pink wool &amp; glass!
+                        </p>
+</div>
+<!-- Sign 2 -->
+<div class="mc-sign w-64 p-6 text-center shadow-xl">
+<p class="text-[#373737] text-xl font-bold leading-tight">
+                            Find 100 pink sheep in the wild forest!
+                        </p>
+</div>
+<!-- Sign 3 -->
+<div class="mc-sign w-64 p-6 text-center shadow-xl">
+<p class="text-[#373737] text-xl font-bold leading-tight">
+                            Have a tea party with a creeper (peaceful mode)!
+                        </p>
+</div>
+</div>
+</section>
+<!-- Message Section (Chest Interface) -->
+<section class="max-w-4xl w-full">
+<div class="flex items-center gap-4 mb-8">
+<span class="material-symbols-outlined text-mc-dark-gray text-4xl">inventory</span>
+<h3 class="text-3xl font-black uppercase text-mc-dark-gray italic">Drop a Message in the Chest</h3>
+</div>
+<div class="mc-panel bg-[#c6c6c6] p-8 flex flex-col md:flex-row gap-8">
+<!-- Left: "Double Chest" Icon -->
+<div class="w-full md:w-1/3 flex items-center justify-center bg-[#8b8b8b] border-4 border-[#373737] p-8">
+<div class="relative w-32 h-32 bg-[#866043] border-4 border-[#373737] shadow-[inset_-8px_-8px_0px_#5d4037]">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-8 bg-[#c6c6c6] border-2 border-[#373737]"></div>
+</div>
+</div>
+<!-- Right: Form -->
+<div class="w-full md:w-2/3 flex flex-col gap-4">
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase text-mc-dark-gray tracking-tighter">Sender Username</label>
+<input class="mc-slot w-full text-white px-4 text-left outline-none focus:border-primary" placeholder="Steve_123" type="text"/>
+</div>
+<div class="flex flex-col gap-2">
+<label class="text-xs font-bold uppercase text-mc-dark-gray tracking-tighter">Your Scroll Message</label>
+<textarea class="mc-slot w-full h-auto text-white p-4 text-left outline-none focus:border-primary resize-none" placeholder="Hello Lily! I love your pink castle..." rows="4"></textarea>
+</div>
+<button class="mc-button w-full py-4 text-xl font-black uppercase tracking-widest bg-mc-grass border-[#ffffff_#3e5e1f_#3e5e1f_#ffffff]">
+                            Craft Message
+                        </button>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="mt-20 px-10 py-12 bg-mc-dirt text-white border-t-8 border-mc-grass">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+<div class="flex flex-col items-start gap-2">
+<div class="text-2xl font-black italic uppercase tracking-tighter">Lily's <span class="text-primary">World</span></div>
+<p class="text-mc-light-gray/60 text-sm">Made with love, pixels, and bubblegum pink blocks.</p>
+</div>
+<div class="flex gap-4">
+<div class="mc-button p-3 flex items-center justify-center">
+<span class="material-symbols-outlined">videogame_asset</span>
+</div>
+<div class="mc-button p-3 flex items-center justify-center">
+<span class="material-symbols-outlined">chat</span>
+</div>
+<div class="mc-button p-3 flex items-center justify-center">
+<span class="material-symbols-outlined">brush</span>
+</div>
+</div>
+<div class="text-right text-xs uppercase font-bold tracking-widest opacity-50">
+                    © 2024 Voxel Studio <br/>
+                    No Creepers Allowed
+                </div>
+</div>
+</footer>
+</div>
+</body></html>

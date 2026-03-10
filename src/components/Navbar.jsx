@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { styles } from "../styles";
 import { navLinks } from "../constants";
 
-const Navbar = () => {
+const Navbar = ({ isNight, setIsNight }) => {
     const [active, setActive] = useState("");
     const [toggle, setToggle] = useState(false);
     const [scrolled, setScrolled] = useState(false);
@@ -27,7 +27,7 @@ const Navbar = () => {
     return (
         <nav
             className={`${styles.paddingX
-                } w-full flex items-center py-5 fixed top-0 z-20 ${scrolled ? "bg-primary" : "bg-transparent"
+                } w-full flex items-center py-5 fixed top-0 z-20 ${scrolled ? "bg-background-light mc-panel" : "bg-transparent"
                 }`}
         >
             <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
@@ -39,26 +39,36 @@ const Navbar = () => {
                         window.scrollTo(0, 0);
                     }}
                 >
-                    {/* Placeholder for logo if not present */}
-                    <div className="w-9 h-9 bg-white rounded-full flex justify-center items-center text-black font-bold">A</div>
-                    <p className='text-white text-[18px] font-bold cursor-pointer flex '>
-                        Adrian &nbsp;
-                        <span className='sm:block hidden'> | JS Mastery</span>
-                    </p>
+                    <div className="w-10 h-10 bg-primary border-4 border-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)] flex items-center justify-center">
+                        <span className="text-white text-2xl font-bold">A</span>
+                    </div>
+                    <h1 className="text-[#3f3f3f] text-2xl font-black leading-none tracking-tighter uppercase italic pixel-text">
+                        Aria's <span className="text-primary">World</span>
+                    </h1>
                 </Link>
 
-                <ul className='list-none hidden sm:flex flex-row gap-10'>
-                    {navLinks.map((nav) => (
-                        <li
-                            key={nav.id}
-                            className={`${active === nav.title ? "text-white" : "text-secondary"
-                                } hover:text-white text-[18px] font-medium cursor-pointer`}
-                            onClick={() => setActive(nav.title)}
-                        >
-                            <a href={`#${nav.id}`}>{nav.title}</a>
-                        </li>
-                    ))}
-                </ul>
+                <div className="flex items-center gap-6">
+                    <ul className='list-none hidden sm:flex flex-row gap-10'>
+                        {navLinks.map((nav) => (
+                            <li
+                                key={nav.id}
+                                className={`${active === nav.title ? "text-white" : "text-secondary"
+                                    } hover:text-white text-[18px] font-medium cursor-pointer`}
+                                onClick={() => setActive(nav.title)}
+                            >
+                                <a href={`#${nav.id}`}>{nav.title}</a>
+                            </li>
+                        ))}
+                    </ul>
+
+                    {/* Theme Toggle */}
+                    <button 
+                        onClick={() => setIsNight(!isNight)}
+                        className="mc-button p-2 text-2xl flex items-center justify-center w-12 h-12"
+                    >
+                        {isNight ? "🌙" : "☀️"}
+                    </button>
+                </div>
 
                 <div className='sm:hidden flex flex-1 justify-end items-center'>
                     {/* Placeholder for menu icon */}

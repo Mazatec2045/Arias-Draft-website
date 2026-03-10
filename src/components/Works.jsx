@@ -18,49 +18,42 @@ const ProjectCard = ({
     return (
         <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
             <Tilt
-                tiltMaxAngleX={45}
-                tiltMaxAngleY={45}
-                scale={1}
+                tiltMaxAngleX={15}
+                tiltMaxAngleY={15}
+                scale={1.05}
                 transitionSpeed={450}
-                className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+                className='mc-panel p-2 sm:w-[360px] w-full bg-[#c6c6c6]'
             >
-                <div className='relative w-full h-[230px] bg-black-200 rounded-2xl'>
-                    {/* <img
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
-          /> */}
-                    <div className="w-full h-full flex justify-center items-center text-white">Image Placeholder</div>
-
+                {/* Minecraft Item Frame Style Container */}
+                <div className='relative w-full h-[230px] bg-[#8b8b8b] border-4 border-[#373737] shadow-[inset_-4px_-4px_0px_rgba(0,0,0,0.2)] flex items-center justify-center overflow-hidden group'>
+                    <div className="text-6xl group-hover:scale-110 transition-transform">
+                        {index === 0 ? "🏰" : "🌊"}
+                    </div>
+                    
                     <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
                         <div
                             onClick={() => window.open(source_code_link, "_blank")}
-                            className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
+                            className='mc-button w-10 h-10 flex justify-center items-center cursor-pointer bg-[#373737] border-white/20'
                         >
-                            {/* <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              /> */}
-                            <div className="text-white text-xs">GH</div>
+                            <span className="text-white text-xs font-bold">VIEW</span>
                         </div>
                     </div>
                 </div>
 
-                <div className='mt-5'>
-                    <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-                    <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-                </div>
-
-                <div className='mt-4 flex flex-wrap gap-2'>
-                    {tags.map((tag) => (
-                        <p
-                            key={`${name}-${tag.name}`}
-                            className={`text-[14px] ${tag.color}`}
-                        >
-                            #{tag.name}
-                        </p>
-                    ))}
+                <div className='mt-5 px-2 pb-2'>
+                    <h3 className='text-[#373737] font-black text-[24px] pixel-text'>{name}</h3>
+                    <p className='mt-2 text-[#555555] text-[16px] leading-tight font-bold'>{description}</p>
+                    
+                    <div className='mt-4 flex flex-wrap gap-2'>
+                        {tags.map((tag) => (
+                            <p
+                                key={`${name}-${tag.name}`}
+                                className={`text-[14px] font-black uppercase ${tag.color}`}
+                            >
+                                #{tag.name}
+                            </p>
+                        ))}
+                    </div>
                 </div>
             </Tilt>
         </motion.div>
