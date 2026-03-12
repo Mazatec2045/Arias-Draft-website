@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ef39b2",
+                        "background-light": "#f8f6f7",
+                        "background-dark": "#22101c",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<title>My Pink Pixel World</title>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-primary/10 px-10 py-4 bg-white dark:bg-background-dark">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-3 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">grid_view</span>
+<h2 class="text-slate-900 dark:text-slate-100 text-xl font-bold leading-tight tracking-tight">My Favorites</h2>
+</div>
+<nav class="flex items-center gap-8">
+<a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Snacks</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Games</a>
+<a class="text-slate-700 dark:text-slate-300 text-sm font-semibold hover:text-primary transition-colors" href="#">Profile</a>
+</nav>
+</div>
+<div class="flex flex-1 justify-end gap-6 items-center">
+<label class="flex flex-col min-w-40 h-10 max-w-64">
+<div class="flex w-full flex-1 items-stretch rounded-lg overflow-hidden border border-primary/20 bg-primary/5">
+<div class="text-primary flex items-center justify-center pl-4">
+<span class="material-symbols-outlined text-xl">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 border-none bg-transparent focus:ring-0 text-slate-900 dark:text-slate-100 placeholder:text-primary/50 px-4 text-sm" placeholder="Search my world..." value=""/>
+</div>
+</label>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10 border-2 border-primary" data-alt="Pixel art avatar of a girl with pink hair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApJGf7T4_eBI_oecqbXop3y-mLydiwFMD1IWmj5pjGB_6h-s1ylwYNp6yEJ9XeWBKdd_dRbuvyi2QXdLDqUGzdMGIWgEZNVcFvGQLWPxCWmhcl211gBrxNyM3un9K0vMy6EK3e0g8VETq-QwJQQQxayhcN7t1YlI_dOevhR9kdVzDK1RO_BzD0DBYZ2LKPVdpsJYfLZh_RNTRU0keSsoZFhMDDMfML-r2xiMNr05BQzbtH2a9SgLd5AGn8GU62YlfN4zQKM_p08ByJ");'></div>
+</div>
+</header>
+<main class="px-4 md:px-20 lg:px-40 flex flex-1 justify-center py-8">
+<div class="layout-content-container flex flex-col max-w-[1024px] flex-1 gap-10">
+<!-- Hero Section -->
+<div class="@container">
+<div class="relative group">
+<div class="bg-cover bg-center flex flex-col justify-end overflow-hidden rounded-xl min-h-[320px] shadow-lg border-4 border-white dark:border-primary/20" data-alt="Pink aesthetic Minecraft landscape with cherry blossoms" style='background-image: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(239, 57, 178, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAWzlMLg9oNAIog6KtITkd4CbW4gGGlehMRvonqzSWfpIz1VJUsMEJQ4uCcxFMIi1uKf9v1S71LpSQPrbyJNaqIppfqdX6e9FMIJh60dEvT-olXxvcwbBd2uzdvFcM6gXLnzAuasf7Z0a6PEUbmrBftYHz-EoV8qa7UI0ukMH8iSQsGLFwAg07FFOcEIYnvtnge9H-4iSmh9nJL2Qw20W8uAAM04sPfHf5EBGVBSYCBLlvPpOf6LUSbbJty1XVlh5ZGMdo-t4E4-41m");'>
+<div class="flex p-8 flex-col gap-2">
+<h1 class="text-white text-4xl md:text-5xl font-bold leading-tight drop-shadow-md">My Pink Pixel World</h1>
+<p class="text-white/90 text-lg font-medium">Welcome to my corner of the blocky universe!</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Favorite Snacks Section -->
+<section>
+<div class="flex items-center justify-between px-2 mb-6">
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">cookie</span>
+                                Favorite Snacks
+                            </h2>
+<button class="bg-primary text-white px-4 py-2 rounded-lg font-bold text-sm hover:opacity-90 transition-opacity border-b-4 border-pink-700 active:border-b-0 active:translate-y-1">
+                                VIEW ALL
+                            </button>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+<!-- Snack Card 1 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-primary/10 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border-2 border-primary/5">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden border-2 border-primary/20" data-alt="Close up of chocolate pixelated cookies" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZtB-Jh9WFMbEKe-tfooiaE8JFPxUpdLGgFoVDuf2OkxI2RlpIYp-X-B9HTLhchHJqEFWVRXniGQW_ejnwHDGXxm0hcPmdz00929hsu4lzahjDdWN7zRDdHOJAAyy00Njbsf3M7aCaVkyuJ5c7VZhi6V9rugUcJcGEOEBfvGhKCRl_PPgglcwx6YIrkrUGuhdUDG9unkEJ2E6TGrn4UOMqxYx1UjqS51sThTCA7WUMiPvy5iVMMgJCTagYUIlu9RScKcr3IvkV9ERZ");'></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">Pixel Cookies</p>
+<p class="text-primary text-sm font-semibold">Crunchy &amp; Sweet</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-2">The perfect snack for long building sessions in the creative mode.</p>
+</div>
+</div>
+<!-- Snack Card 2 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-primary/10 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border-2 border-primary/5">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden border-2 border-primary/20" data-alt="Bright red glowing sweet berries in a bowl" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9zj5eX5vHPROanfnjNU211pFor1tI8tO5IJuD3COAEBVzF9o97ZBCGaLm9rpV5yrpK341D3RvR0gyZ8SKu9OkqrIZkUsjoOgLoMWu7T7OVDM5i1bWGg_q2mGIgKeAgB0wefvU-BIZTdR-E2tnERrH9GJtxmz8z6Xtf8krDG5kyjI_TNuywj9x__aYg4pfmCYLTRrSBoWVCAIO1apkUJPyQ3JHNaMQdogv13jbY8GJAerXAWByr2Kxh3aI5CAnb9X45wgv-tEoF4UT");'></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">Sweet Berries</p>
+<p class="text-primary text-sm font-semibold">Freshly Foraged</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Just watch out for the thorns! These are a forest favorite.</p>
+</div>
+</div>
+<!-- Snack Card 3 -->
+<div class="flex flex-col gap-4 bg-white dark:bg-primary/10 p-4 rounded-xl shadow-sm hover:shadow-md transition-shadow border-2 border-primary/5">
+<div class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-lg overflow-hidden border-2 border-primary/20" data-alt="Two-tier pink frosted birthday cake with pixel candles" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALNck2M1oN5OJ_SOOBywGaushNhuK-k3UUw3nCo7hxXlth_bI8vIMx04rq07veW9u5EPV1rd8XjGflaJ0yEFiCxhuYJzxEel9y4rtGbLHbY4icDe9_jLmHkrXGo2azn_1uM9zjgR6DUIGvwvsQkGv5wSvEsqgYckCvVNSSt5nIvVqNJrAVULprOiwK75gsjgU7kZmgtDnH6taYEv6B-atCvyorUJzQfCnSfHElqZ1BsXCnOFvaPmEUiQTBXDSfhMIlrV0Q15Glh3Ht");'></div>
+<div>
+<p class="text-slate-900 dark:text-slate-100 text-lg font-bold">Birthday Cake</p>
+<p class="text-primary text-sm font-semibold">Let's Celebrate!</p>
+<p class="text-slate-500 dark:text-slate-400 text-sm mt-2">Best served with friends in a decorated village house.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Favorite Games Section -->
+<section>
+<div class="flex items-center gap-3 px-2 mb-6">
+<h2 class="text-slate-900 dark:text-slate-100 text-2xl font-bold flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">sports_esports</span>
+                                Favorite Games
+                            </h2>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Game Item 1 -->
+<div class="flex items-center justify-between bg-white dark:bg-primary/10 p-4 rounded-xl border-2 border-primary/10 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">deployed_code</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100">Minecraft</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Survival, Creative, and Mods</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-primary font-bold bg-primary/10 px-3 py-1 rounded-full text-xs">TOP PICK</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Game Item 2 -->
+<div class="flex items-center justify-between bg-white dark:bg-primary/10 p-4 rounded-xl border-2 border-primary/10 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">smart_toy</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100">Roblox</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Obbys and RP Worlds</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">arrow_forward_ios</span>
+</div>
+</div>
+<!-- Game Item 3 -->
+<div class="flex items-center justify-between bg-white dark:bg-primary/10 p-4 rounded-xl border-2 border-primary/10 hover:border-primary/40 transition-all cursor-pointer group">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 p-3 rounded-lg text-primary group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined text-3xl">pets</span>
+</div>
+<div>
+<h3 class="font-bold text-lg text-slate-900 dark:text-slate-100">Axolotl Life</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm">Ocean Exploration Sim</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<span class="text-primary font-bold bg-primary/10 px-3 py-1 rounded-full text-xs">NEW</span>
+<span class="material-symbols-outlined text-slate-400 group-hover:text-primary">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom CTA -->
+<div class="mt-8 bg-primary/20 rounded-xl p-8 flex flex-col md:flex-row items-center justify-between gap-6 border-dashed border-2 border-primary/40">
+<div>
+<h3 class="text-2xl font-bold text-slate-900 dark:text-slate-100">Found something cool?</h3>
+<p class="text-slate-600 dark:text-slate-400">Add your own favorites to the collection!</p>
+</div>
+<button class="bg-primary text-white px-8 py-3 rounded-xl font-bold text-lg hover:opacity-90 transition-opacity border-b-4 border-pink-700 active:border-b-0 active:translate-y-1 flex items-center gap-2">
+<span class="material-symbols-outlined">add_circle</span>
+                            ADD NEW
+                        </button>
+</div>
+</div>
+</main>
+<footer class="mt-auto py-8 border-t border-primary/10 text-center text-slate-500 dark:text-slate-400 text-sm">
+<p>© 2024 My Pink Pixel World. All rights reserved.</p>
+<div class="flex justify-center gap-4 mt-4">
+<span class="material-symbols-outlined hover:text-primary cursor-pointer">favorite</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer">share</span>
+<span class="material-symbols-outlined hover:text-primary cursor-pointer">settings</span>
+</div>
+</footer>
+</div>
+</div>
+</body></html>

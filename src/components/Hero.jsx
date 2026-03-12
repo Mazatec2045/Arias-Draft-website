@@ -14,11 +14,11 @@ const Hero = ({ isNight }) => {
 
                 <div>
                     <h1 className={`${styles.heroHeadText} text-white`}>
-                        Hi, I&apos;m <span className='text-[#ee2b8c] pixel-text'>Aria</span>
+                        Hi, I&apos;m <span className='text-[#ee2b8c] pixel-text'>Aria Kate</span>
                     </h1>
                     <p className={`${styles.heroSubText} mt-2 text-[#c6c6c6] pixel-text`}>
-                        I love building Minecraft castles <br className='sm:block hidden' />
-                        and taming pink axolotls! 🦎
+                        I build Minecraft castles by day <br className='sm:block hidden' />
+                        and craft DIY squishies by night! ✂️💖
                     </p>
                 </div>
             </div>

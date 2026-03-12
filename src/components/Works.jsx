@@ -27,7 +27,7 @@ const ProjectCard = ({
                 {/* Minecraft Item Frame Style Container */}
                 <div className='relative w-full h-[230px] bg-[#8b8b8b] border-4 border-[#373737] shadow-[inset_-4px_-4px_0px_rgba(0,0,0,0.2)] flex items-center justify-center overflow-hidden group'>
                     <div className="text-6xl group-hover:scale-110 transition-transform">
-                        {index === 0 ? "🏰" : "🌊"}
+                        {index === 0 ? "🎨" : "☁️"}
                     </div>
                     
                     <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>

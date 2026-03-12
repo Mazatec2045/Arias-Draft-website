@@ -25,7 +25,7 @@ const Tech = () => {
                         title={technology.name}
                     >
                         <div className='text-3xl group-hover:scale-125 transition-transform duration-200'>
-                            {index === 0 ? "🌸" : index === 1 ? "💎" : index === 2 ? "🧪" : index === 3 ? "🧱" : index === 4 ? "🪣" : index === 5 ? "🟢" : "🌳"}
+                            {index === 0 ? "🖍️" : index === 1 ? "☁️" : index === 2 ? "✨" : index === 3 ? "✏️" : index === 4 ? "🎀" : index === 5 ? "🖱️" : "✂️"}
                         </div>
                         
                         <div className="absolute bottom-1 right-1 bg-black/40 px-1 leading-none">

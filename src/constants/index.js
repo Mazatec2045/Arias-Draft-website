@@ -12,88 +12,92 @@ export const navLinks = [
 export const services = [
     {
         title: "Master Builder",
-        icon: "web",
+        subtitle: "Minecraft Castles",
+        icon: "architecture",
     },
     {
-        title: "Axolotl Tamer",
-        icon: "mobile",
+        title: "Squishy Maker",
+        subtitle: "DIY Foam Art",
+        icon: "rebase_edit",
     },
     {
-        title: "Diamond Miner",
-        icon: "backend",
+        title: "Sticker Artist",
+        subtitle: "Handmade Stickers",
+        icon: "auto_awesome",
     },
     {
-        title: "Redstone Expert",
-        icon: "creator",
+        title: "Drawing Pro",
+        subtitle: "Coloring & Sketching",
+        icon: "draw",
     },
 ];
 
 export const technologies = [
     {
-        name: "Pink Wool",
-        icon: "html",
+        name: "Sparkly Markers",
+        icon: "brush",
     },
     {
-        name: "Diamond Block",
-        icon: "css",
+        name: "Magic Foam",
+        icon: "category",
     },
     {
-        name: "Enclosed Glass",
-        icon: "javascript",
+        name: "Sticker Paper",
+        icon: "note",
     },
     {
-        name: "Netherite",
-        icon: "typescript",
+        name: "Pink Pencil",
+        icon: "edit",
     },
     {
-        name: "Water Bucket",
-        icon: "reactjs",
+        name: "Washi Tape",
+        icon: "straighten",
     },
     {
-        name: "Slime Block",
-        icon: "redux",
+        name: "Gaming Mouse",
+        icon: "mouse",
     },
     {
-        name: "Cherry Wood",
-        icon: "tailwind",
+        name: "Craft Scissors",
+        icon: "content_cut",
     },
 ];
 
 export const experiences = [
     {
-        title: "Master Castle Builder",
-        company_name: "Creative Mode",
+        title: "DIY Squishy Queen",
+        company_name: "The Craft Room",
         icon: "starbucks",
         iconBg: "#ee2b8c",
-        date: "Level 100",
+        date: "Level 10",
         points: [
-            "Built a giant 5-story castle made almost entirely out of pink wool and glass blocks.",
-            "Designed a beautiful garden filled with cherry blossom trees and pink tulips.",
-            "Defended the castle from zombies using strategic lighting and walls.",
+            "Hand-painting soft foam to look like cute pandas and donuts.",
+            "Testing the 'slow-rise' factor of every creation.",
+            "Mixing custom colors to find the perfect shade of bubblegum pink.",
         ],
     },
     {
-        title: "Axolotl Rescuer",
-        company_name: "Lush Caves Expedition",
+        title: "Master Sticker Maker",
+        company_name: "Sticker Lab",
         icon: "tesla",
         iconBg: "#87ceeb",
-        date: "Level 250",
+        date: "Level 15",
         points: [
-            "Explored dangerous deep dark caves to find the legendary Lush Caves biome.",
-            "Successfully tamed 5 different colors of axolotls, including the super rare blue one!",
-            "Created a massive underwater aquarium habitat for all my axolotl friends.",
+            "Drawing original characters and turning them into real stickers.",
+            "Learning how to peel and stick without getting bubbles!",
+            "Decorating my laptop and notebooks with custom designs.",
         ],
     },
     {
-        title: "Diamond Miner Supreme",
-        company_name: "Y-Level -59",
+        title: "Minecraft Keyboard Master",
+        company_name: "Survival Mode",
         icon: "shopify",
         iconBg: "#c6c6c6",
-        date: "Level 500",
+        date: "In Training",
         points: [
-            "Mined over 10 stacks of diamonds without falling into lava even once.",
-            "Crafted a full set of enchanted diamond armor and tools.",
-            "Decorated my bedroom floor entirely with shiny diamond blocks.",
+            "Learning how to use W-A-S-D to walk through the cherry blossom forest.",
+            "Building 3D houses using the mouse and keyboard together.",
+            "Exploring lush caves to find new axolotl friends.",
         ],
     },
 ];
@@ -119,16 +123,16 @@ export const testimonials = [
 
 export const projects = [
     {
-        name: "The Pink Palace",
+        name: "My Drawing Gallery",
         description:
-            "A massive, intricate castle built entirely in creative mode using pink wool, pink concrete, and cherry blossom wood.",
+            "A collection of my best drawings, from cute animals to Minecraft landscapes.",
         tags: [
             {
-                name: "creative",
+                name: "handmade",
                 color: "pink-text-gradient",
             },
             {
-                name: "building",
+                name: "art",
                 color: "blue-text-gradient",
             },
         ],
@@ -136,16 +140,16 @@ export const projects = [
         source_code_link: "#",
     },
     {
-        name: "Axolotl Sanctuary",
+        name: "Squishy Shop",
         description:
-            "An underwater dome designed specifically to house over 50 rescued axolotls of various colors.",
+            "See my latest homemade squishies! They are super soft and very colorful.",
         tags: [
             {
-                name: "survival",
+                name: "DIY",
                 color: "green-text-gradient",
             },
             {
-                name: "pets",
+                name: "crafts",
                 color: "pink-text-gradient",
             },
         ],
