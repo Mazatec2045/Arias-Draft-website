@@ -7,6 +7,7 @@ import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 import Tech from "./components/Tech";
 import Works from "./components/Works";
+import Contact from "./components/Contact";
 import StarsCanvas from "./components/canvas/Stars";
 import CloudsCanvas from "./components/canvas/Clouds";
 
@@ -24,7 +25,10 @@ const App = () => {
         <Experience />
         <Tech />
         <Works />
-        {isNight ? <StarsCanvas /> : <CloudsCanvas />}
+        <div className="relative z-0">
+          <Contact />
+          {isNight ? <StarsCanvas /> : <CloudsCanvas />}
+        </div>
       </div>
     </BrowserRouter>
   );
