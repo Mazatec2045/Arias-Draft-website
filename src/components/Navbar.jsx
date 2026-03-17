@@ -47,7 +47,7 @@ const Navbar = ({ isNight, setIsNight }) => {
                     </h1>
                 </Link>
 
-                <div className="flex items-center gap-6">
+                <div className="flex items-center gap-4 sm:gap-6">
                     <ul className='list-none hidden sm:flex flex-row gap-10'>
                         {navLinks.map((nav) => (
                             <li
@@ -64,38 +64,38 @@ const Navbar = ({ isNight, setIsNight }) => {
                     {/* Theme Toggle */}
                     <button 
                         onClick={() => setIsNight(!isNight)}
-                        className="mc-button p-2 text-2xl flex items-center justify-center w-12 h-12"
+                        className="mc-button p-2 text-xl sm:text-2xl flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12"
                     >
                         {isNight ? "🌙" : "☀️"}
                     </button>
-                </div>
 
-                <div className='sm:hidden flex flex-1 justify-end items-center'>
-                    {/* Placeholder for menu icon */}
-                    <div
-                        className='w-[28px] h-[28px] object-contain cursor-pointer bg-white'
-                        onClick={() => setToggle(!toggle)}
-                    >M</div>
+                    <div className='sm:hidden flex items-center'>
+                        {/* Placeholder for menu icon */}
+                        <div
+                            className='w-[36px] h-[36px] cursor-pointer bg-[#c6c6c6] border-2 border-white text-[#3f3f3f] flex items-center justify-center font-bold pixel-text text-xl shadow-[2px_2px_0px_rgba(0,0,0,0.2)]'
+                            onClick={() => setToggle(!toggle)}
+                        >M</div>
 
-                    <div
-                        className={`${!toggle ? "hidden" : "flex"
-                            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
-                    >
-                        <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
-                            {navLinks.map((nav) => (
-                                <li
-                                    key={nav.id}
-                                    className={`font-poppins font-medium cursor-pointer text-[16px] ${active === nav.title ? "text-white" : "text-secondary"
-                                        }`}
-                                    onClick={() => {
-                                        setToggle(!toggle);
-                                        setActive(nav.title);
-                                    }}
-                                >
-                                    <a href={`#${nav.id}`}>{nav.title}</a>
-                                </li>
-                            ))}
-                        </ul>
+                        <div
+                            className={`${!toggle ? "hidden" : "flex"
+                                } p-6 bg-[#c6c6c6] absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl border-4 border-white shadow-[4px_4px_0px_rgba(0,0,0,0.2)]`}
+                        >
+                            <ul className='list-none flex justify-end items-start flex-1 flex-col gap-4'>
+                                {navLinks.map((nav) => (
+                                    <li
+                                        key={nav.id}
+                                        className={`font-poppins font-medium cursor-pointer text-[16px] pixel-text ${active === nav.title ? "text-primary" : "text-[#3f3f3f]"
+                                            }`}
+                                        onClick={() => {
+                                            setToggle(!toggle);
+                                            setActive(nav.title);
+                                        }}
+                                    >
+                                        <a href={`#${nav.id}`}>{nav.title}</a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -12,9 +12,9 @@ const Hero = ({ isNight }) => {
                     <div className='w-1 sm:h-80 h-40' style={{background: 'linear-gradient(180deg, #ee2b8c 0%, rgba(238,43,140,0) 100%)'}} />
                 </div>
 
-                <div>
+                <div className='max-w-[70%] sm:max-w-none'>
                     <h1 className={`${styles.heroHeadText} text-white`}>
-                        Hi, I&apos;m <span className='text-[#ee2b8c] pixel-text'>Aria Kate</span>
+                        Hi, I&apos;m <br className='block sm:hidden'/><span className='text-[#ee2b8c] pixel-text'>Aria Kate</span>
                     </h1>
                     <p className={`${styles.heroSubText} mt-2 text-[#c6c6c6] pixel-text`}>
                         I build Minecraft castles by day <br className='sm:block hidden' />
@@ -24,11 +24,11 @@ const Hero = ({ isNight }) => {
             </div>
 
             {/* Pink Axolotl Placeholder */}
-            <div className='absolute right-10 top-1/2 -translate-y-1/2 flex flex-col items-center gap-2'>
-                <div className={`text-[120px] animate-bounce transition-all duration-1000 ${isNight ? 'brightness-50 drop-shadow-[0_0_30px_rgba(238,43,140,0.5)]' : ''}`}>
+            <div className='absolute sm:right-10 right-2 top-[65%] sm:top-1/2 -translate-y-1/2 flex flex-col items-center gap-1 sm:gap-2'>
+                <div className={`text-[80px] sm:text-[120px] animate-bounce transition-all duration-1000 ${isNight ? 'brightness-50 drop-shadow-[0_0_30px_rgba(238,43,140,0.5)]' : ''}`}>
                     {isNight ? "👾" : "🦎"}
                 </div>
-                <p className='text-[#ee2b8c] font-bold pixel-text text-lg'>
+                <p className='text-[#ee2b8c] font-bold pixel-text text-sm sm:text-lg'>
                     {isNight ? "Night Creature" : "Pink Axolotl"}
                 </p>
             </div>
