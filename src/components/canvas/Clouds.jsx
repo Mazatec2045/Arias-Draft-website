@@ -1,4 +1,4 @@
-import React, { useRef, useMemo } from "react";
+import React, { useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Preload } from "@react-three/drei";
 
@@ -25,7 +25,7 @@ const Cloud = ({ position, size }) => {
 };
 
 const Clouds = () => {
-    const cloudData = useMemo(() => {
+    const [cloudData] = useState(() => {
         return Array.from({ length: 15 }, () => ({
             position: [
                 Math.random() * 40 - 20, // x
@@ -38,7 +38,7 @@ const Clouds = () => {
                 Math.random() * 1 + 0.5 // depth
             ]
         }));
-    }, []);
+    });
 
     return (
         <group>
