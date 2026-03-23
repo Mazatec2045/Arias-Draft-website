@@ -1,4 +1,4 @@
-import { useState, useRef, Suspense, useMemo } from "react";
+import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 
@@ -6,7 +6,7 @@ const Stars = (props) => {
     const ref = useRef();
     
     // Generate random sphere positions without maath dependency
-    const sphere = useMemo(() => {
+    const [sphere] = useState(() => {
         const positions = new Float32Array(5000 * 3);
         for (let i = 0; i < 5000; i++) {
             const theta = Math.random() * Math.PI * 2;
@@ -17,7 +17,7 @@ const Stars = (props) => {
             positions[i * 3 + 2] = r * Math.cos(phi);
         }
         return positions;
-    }, []);
+    });
 
     useFrame((state, delta) => {
         if (ref.current) {

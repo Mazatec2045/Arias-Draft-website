@@ -43,7 +43,7 @@ const Navbar = ({ isNight, setIsNight }) => {
                         <span className="text-white text-2xl font-bold">A</span>
                     </div>
                     <h1 className="text-[#3f3f3f] text-2xl font-black leading-none tracking-tighter uppercase italic pixel-text">
-                        Aria Kate's <span className="text-primary">World</span>
+                        Aria Kate&apos;s <span className="text-primary">World</span>
                     </h1>
                 </Link>
 
